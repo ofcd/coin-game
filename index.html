@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		.d-flex{
+			display: flex;
+		}
+		.obj1{
+			width: 200px;
+			height: 200px;
+			position: absolute;
+			background: #15ff0a;
+			transition: 1s;
+			left: 725px;
+			top: 225px;
+		}
+		.obj2{
+			width: 200px;
+			height: 200px;
+			position: absolute;
+			background: url(22.jpg);
+			background-size: 100% 100%;
+			transition: 1s;
+			left: 975px;
+			top: 225px;
+		}
+		.obj3{
+			width: 200px;
+			height: 200px;
+			position: absolute;
+			background: #15ff0a;
+			transition: 1s;
+			left: 725px;
+			top: 475px;
+		}
+		.obj4{
+			width: 200px;
+			height: 200px;
+			position: absolute;
+			background: #15ff0a;
+			transition: 1s;
+			left: 975px; 
+			top: 475px;
+		}
+		.m-t{
+			margin-top: 100px;
+			text-align: center;
+		}
+		.btn{
+			width: 100px;
+			height: 35px;
+			position: absolute;
+			top: 725px;
+			left: 900px;
+		}
+		.main{
+			display: block;
+		}
+		.lost{
+			display: none;
+		}
+		.won{
+			display: none;
+		}
+		.qwe{
+			width: 500px;
+			height: 500px;
+			margin-left: 700px;
+		}
+	</style>
+</head>
+<body style="background: #a8acb3;">
+	<div class="main">
+		<h1 style="position: absolute; left: 850px; top: 10px;">Найди монетку</h1>
+		<h1 class="m-t">Попыток: <span class="at"></span></h1>
+		<div class="obj1">
+			
+		</div>
+		<div class="obj2">
+
+		</div>
+		<div class="obj3">
+			
+		</div>
+		<div class="obj4">
+			
+		</div>
+		<button class="btn">Start</button>
+	</div>
+	<div class="won">
+		<h1 class="m-t">Ты выиграл!</h1>
+		<div class="qwe">
+			<img src="dead.png" style="width:100%; height: 100%;">
+		</div>
+	</div>
+	<div class="lost">
+		<h1 class="m-t">Ты проиграл!</h1>
+		<div class="qwe">
+			<img src="inside.png" style="width:100%; height: 100%;">
+		</div>
+	</div>
+	
+
+
+	<script type="text/javascript">
+		let at = 2;
+		document.querySelector(".at").innerHTML = at;
+		document.querySelector(".btn").onclick = function() {
+			document.querySelector(".obj1").style.background = "black";
+			document.querySelector(".obj2").style.background = "black";
+			document.querySelector(".obj3").style.background = "black";
+			document.querySelector(".obj4").style.background = "black";
+			document.querySelector(".obj1").style.top = "475px";
+			document.querySelector(".obj2").style.left = "725px";
+			document.querySelector(".obj3").style.left = "975px";
+			document.querySelector(".obj4").style.top = "225px";
+		}
+		document.querySelector(".obj1").onclick = function() {
+			at = at - 1;
+			alert("Неверно!");
+			document.querySelector(".at").innerHTML = at;
+			if (at == 0) {
+				document.querySelector(".main").style.display = "none";
+				document.querySelector(".lost").style.display = "block";
+			}
+		}
+		document.querySelector(".obj2").onclick = function() {
+			alert("Верно!");
+			document.querySelector(".main").style.display = "none";
+			document.querySelector(".won").style.display = "block";
+		}
+		document.querySelector(".obj3").onclick = function() {
+			at = at - 1;
+			alert("Неверно!");
+			document.querySelector(".at").innerHTML = at;
+			document.querySelector(".at").innerHTML = at;
+			if (at == 0) {
+				document.querySelector(".main").style.display = "none";
+				document.querySelector(".lost").style.display = "block";
+			}
+		}
+		document.querySelector(".obj4").onclick = function() {
+			at = at - 1;
+			alert("Неверно!");
+			document.querySelector(".at").innerHTML = at;
+			document.querySelector(".at").innerHTML = at;
+			if (at == 0) {
+				document.querySelector(".main").style.display = "none";
+				document.querySelector(".lost").style.display = "block";
+			}
+		}
+	</script>
+</body>
+</html>
